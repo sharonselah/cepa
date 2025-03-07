@@ -10,11 +10,10 @@ const HomePage = () => {
   return (
     <>
       {/* Top Section */}
-      <div className="col-span-12 relative bg-cover bg-center min-h-[400px] md:min-h-[92vh]" style={{ backgroundImage: "url('/teaser.png')" }}>
+      <div className="col-span-12 relative bg-cover bg-center min-h-[400px] md:max-h-[80vh]" style={{ backgroundImage: "url('/teaser.png')" }}>
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#800000]/90 to-[#1A0000]/50" />
-
-
+    
         <div className='mx-8 h-full relative'>
           <Header />
           <Slider/>

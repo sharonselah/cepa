@@ -14,17 +14,22 @@ const Header = ({ className }: { className?: string }) => {
         { name: "Data", path: "/data" },
         { name: "Grant & Funding", path: "/grants" },
         { name: "Technical Assistance", path: "/technical" }
-      ].map((link) => (
-        <Link
-          key={link.path}
-          href={link.path}
-          className={`p-1 transition-colors ${
-            pathname === link.path ? "text-white" : "text-graytext"
-          }`}
-        >
-          {link.name}
-        </Link>
-      ))}
+      ].map((link) => {
+        const isActive =
+          link.path === "/data"
+            ? pathname.startsWith("/data")
+            : pathname === link.path;
+
+        return (
+          <Link
+            key={link.path}
+            href={link.path}
+            className={`p-1 transition-colors ${isActive ? "text-white" : "text-graytext"}`}
+          >
+            {link.name}
+          </Link>
+        );
+      })}
     </div>
   );
 };

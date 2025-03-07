@@ -40,3 +40,17 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Custom styles for Swiper pagination */
+.custom-pagination .swiper-pagination-bullet {
+  background: white; /* Default color for dots */
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px !important; /* Adjust spacing between dots */
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background: #ffa500; /* Active dot color */
+  opacity: 1;
+}

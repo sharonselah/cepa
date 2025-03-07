@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         cbg: "rgba(253, 237, 237, 0.2)",
+        
         graytext:"#c7c7cc",
         maroon: {
           100: "#800000"

@@ -1,39 +1,59 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { homepageSlides } from '@/data/home';
 import { cn } from '@/lib/utils';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore from 'swiper';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
+
+// Initialize Swiper modules
+SwiperCore.use([Autoplay, Pagination]);
 
 const Slider = () => {
-    const [activeSlide, setActiveSlide] = useState(0);
-  
-    return (
-      <div className='min-h-96 absolute top-20 w-full md:w-2/3 lg:w-1/2 text-white flex flex-col items-start'>
-        {homepageSlides.map((slide, index) => (
-          <div key={index} className={cn('transition-opacity text-left duration-500', activeSlide === index ? 'opacity-100' : 'opacity-0 hidden')}>
-            <h3 className="text-h2">{slide.heading}</h3>
-            <p className="text-body leading-8 my-4 md:mt-6 md:mb-8 text-justify">{slide.body}</p>
-            <Link href="/contributor">
-              <button className="bg-[#8e8e93] shadow-inherit text-white font-bold py-2 px-6 rounded">Be a Contributor</button>
-            </Link>
-          </div>
+  return (
+    <div className="min-h-96 h-auto absolute top-20 w-full md:w-2/3 lg:w-[55%] text-white flex flex-col items-start">
+     <Swiper
+  spaceBetween={30}
+  slidesPerView={1}
+  autoplay={{ delay: 5000, disableOnInteraction: false }}
+  loop={true}
+  pagination={{
+    clickable: true,
+    el: '.custom-pagination',
+  }}
+  className="w-full relative pb-16" // Add padding-bottom to the Swiper container
+>
+  {homepageSlides.map((slide, index) => (
+    <SwiperSlide key={index}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-left"
+      >
+        <h3 className="text-h2">{slide.heading}</h3>
+        <p className="text-body leading-9 my-4 md:mt-6  text-justify">{slide.body}</p>
+        <Link href="/contributor">
+          <button className="bg-[#8e8e93] shadow-inherit text-white font-bold py-2 px-6 rounded mb-12">
+            Be a Contributor
+          </button>
+        </Link>
+      </motion.div>
+    </SwiperSlide>
+  ))}
 
-          
-        ))}
-  
-        <div className="flex gap-2 mt-4">
-          {homepageSlides.map((_, index) => (
-            <button
-              key={index}
-              className={cn('w-3 h-3 rounded-full border', activeSlide === index ? 'bg-yellow-500' : 'bg-white')}
-              onClick={() => setActiveSlide(index)}
-            />
-          ))}
-        </div>
-      </div>
-    );
-  };
-  
-  export default Slider;
+  {/* Custom Pagination Container */}
+  <div className="custom-pagination absolute left-0 bottom-0 text-left"></div>
+</Swiper>
+
+
+    </div>
+  );
+};
+
+export default Slider;

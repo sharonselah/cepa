@@ -1,19 +1,14 @@
 export const homepageSlides = [
-    {
-        heading: 'Data Aggregation on Climate and Energy in Africa',
-        body: 'Our platform collects and organizes climate and energy-related data across seven key thematic areas: Energy, Carbon Markets, Water & Waste Management, Agriculture, Natural Capital & Biodiversity, Critical Minerals, and Sustainable Infrastructure & Urbanization. We provide a clear view of Africa’s climate action, helping policymakers, investors, and researchers make informed decisions.',
-    
-      },
-    
-      {
-        heading: 'Finance Module',
-        body: 'The Financing module connects investors and project developers through two pathways: Investment and Grants. In the Investment Module, investors select projects that match their criteria and fund them directly, driving impactful climate and energy solutions. The Grant Module, powered by DAO and smart contracts, operates through a transparent, community-driven process. Developers submit proposals, a committee votes, and approved projects receive funding from a dedicated pool. Join the future of climate financing today!',
-     
-      },
-    
-      {
-        heading: 'Technical Assistance',
-        body: 'The Technical Assistance module equips Project Developers with AI-driven support for financial due diligence, feasibility studies, and project planning. The financial due diligence chatbot evaluates risks, funding eligibility, and compliance. The feasibility studies chatbot provides insights on market analysis, technical assessments, and regulations. The project planning chatbot helps structure timelines, resource allocation, and milestones. Leverage AI agents to streamline your project development!',
-      
-      },
-  ];
+  {
+    heading: 'Data Aggregation Module',
+    body: 'We collect and organize climate and energy data across seven key areas: Energy, Carbon Markets, Water & Waste, Agriculture, Natural Capital, Critical Minerals, and Infrastructure. Our platform offers insights for policymakers, investors, and researchers to drive informed decisions and accelerate Africa’s climate action.'
+  },
+  {
+    heading: 'Finance Module',
+    body: 'Our Financing module connects investors and developers through Investments and Grants. Investors directly fund projects matching their criteria. The Grant Module, powered by DAO and smart contracts, follows a transparent, community-led process where proposals are reviewed, voted on, and funded.'
+  },
+  {
+    heading: 'Technical Assistance',
+    body: 'Our AI-powered Technical Assistance module supports developers with financial due diligence, feasibility studies, and project planning. AI chatbots assess risks, funding eligibility, market trends, and resource allocation to streamline project development and enhance success.'
+  }
+];

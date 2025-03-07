@@ -21,13 +21,33 @@ const ThematicAreas = () => {
             </div>
 
             {/* Thematic Area Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-5 md:my-12">
-                {thematicAreas.map((area, index) => (
-                    <div key={index} className="bg-[#eff6ff] border border-gray-200 hover:border-inherit text-black hover:text-white hover:bg-maroon-100 duration-300 shadow-xs rounded-lg p-6 flex flex-col text-left">
-                        <Image src={area.icon} alt={area.title} width={65} height={65} className="mb-4" />
-                        <h3 className="text-h4  font-semibold">{area.title}</h3>
-                        <p className="text-sm leading-7 mt-2">{area.description}</p>
-                        <a href={area.link} className="mt-4 active:text-blue-600 font-medium hover:underline">View More →</a>
+            <div className="flex flex-wrap justify-center mb-6">
+                {thematicAreas.slice(0, 4).map((area, index) => (
+                    <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
+                        <div className="bg-[#eff6ff] border border-gray-200 hover:border-inherit text-black hover:text-white hover:bg-maroon-100 duration-300 shadow-xs rounded-lg p-6 flex flex-col text-left">
+                            <Image src={area.icon} alt={area.title} width={65} height={65} className="mb-4" />
+                            <h3 className="text-h4 font-semibold">{area.title}</h3>
+                            <p className="text-sm leading-7 mt-2">{area.description}</p>
+                            <a href={area.link} className="mt-4 active:text-blue-600 font-medium hover:underline">
+                                View More →
+                            </a>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Second row - 3 cards */}
+            <div className="flex flex-wrap justify-center">
+                {thematicAreas.slice(4, 7).map((area, index) => (
+                    <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
+                        <div className="bg-[#eff6ff] border border-gray-200 hover:border-inherit text-black hover:text-white hover:bg-maroon-100 duration-300 shadow-xs rounded-lg p-6 flex flex-col text-leftounded-lg shadow-md p-4 h-full">
+                            <Image src={area.icon} alt={area.title} width={65} height={65} className="mb-4" />
+                            <h3 className="text-h4 font-semibold">{area.title}</h3>
+                            <p className="text-sm leading-7 mt-2">{area.description}</p>
+                            <a href={area.link} className="mt-4 active:text-blue-600 font-medium hover:underline">
+                                View More →
+                            </a>
+                        </div>
                     </div>
                 ))}
             </div>

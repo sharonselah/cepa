@@ -26,12 +26,12 @@ const cardData = [
 
 const Cards = () => {
   return (
-    <div className="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-4 p-8">
+    <div className="col-span-12 grid grid-cols-1 md:grid-cols-3 justify-center gap-4 p-8">
       {cardData.map((card, index) => (
         <div key={index} className={`${card.bgColor} text-gray-800 p-6 rounded-lg shadow-md flex flex-col justify-between gap-4`}>
           <h4 className="text-h3">{card.heading}</h4>
           <p className="text-base">{card.body}</p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 font-bold mt-4">
             <Link href={card.linkHref}>{card.linkText}</Link>
             <span>&rarr;</span>
           </div>
