@@ -51,6 +51,8 @@ const ThematicAreas = () => {
                     </div>
                 ))}
             </div>
+
+            
         </div>
     );
 };

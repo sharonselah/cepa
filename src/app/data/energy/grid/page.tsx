@@ -1,6 +1,6 @@
 'use client';
 
-import Metrics from ".././(components)/metrics";
+import Metrics from "@components/metrics";
 import AfricaMapGrid from "./(components)/map";
 import Header from "@components/header";
 import { cn } from "@/lib/utils";

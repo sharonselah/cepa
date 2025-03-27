@@ -1,9 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+
 import Link from 'next/link';
 import { homepageSlides } from '@/data/home';
-import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
