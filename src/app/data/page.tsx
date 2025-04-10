@@ -2,10 +2,12 @@ import Image from "next/image";
 import Header from "@components/header";
 import { cn } from "@/lib/utils";
 import { thematicAreas } from "@/data/thematic areas";
+import Footer from "@components/footer";
 
 
 const ThematicAreas = () => {
     return (
+        <>
         <div className="col-span-12 p-8 mx-8">
             {/* Header Row */}
             <div className="relative flex justify-between items-center mb-8 md:mb-12">
@@ -51,9 +53,11 @@ const ThematicAreas = () => {
                     </div>
                 ))}
             </div>
-
-            
+ 
         </div>
+        
+        <Footer/>
+        </>
     );
 };
 

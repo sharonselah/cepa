@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { Nunito_Sans } from "next/font/google";
 import "@styles/tailwind.css";
 import "@styles/global.css";
-import Footer from "@components/footer";
 
+const nunitoSans = Nunito_Sans({ weight: ["400", "500"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -20,11 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`  antialiased min-h-screen w-full grid grid-cols-12 mx-auto`}
+        className={`${nunitoSans.className} antialiased min-h-screen w-full grid grid-cols-12 mx-auto`}
       >
        
         {children}
-        <Footer/>
+      
        
       </body>
     </html>

@@ -1,0 +1,103 @@
+// fetch-total-energy-budget.ts
+import { CountryEnergyBudget } from './types';
+
+export const totalEnergyBudget: CountryEnergyBudget[] = [
+  {
+    country: 'Kenya',
+    values: [
+      { year: '2015', budget: 500 },
+      { year: '2016', budget: 850 },
+      { year: '2017', budget: 600 },
+      { year: '2018', budget: 950 },
+      { year: '2019', budget: 800 },
+      { year: '2020', budget: 500 },
+      { year: '2021', budget: 950 },
+      { year: '2022', budget: 200 },
+      { year: '2023', budget: 1200 },
+    ],
+  },
+  {
+    country: 'Nigeria',
+    values: [
+      { year: '2015', budget: 400 },
+      { year: '2016', budget: 700 },
+      { year: '2017', budget: 750 },
+      { year: '2018', budget: 820 },
+      { year: '2019', budget: 900 },
+      { year: '2020', budget: 600 },
+      { year: '2021', budget: 870 },
+      { year: '2022', budget: 300 },
+      { year: '2023', budget: 1100 },
+    ],
+  },
+  {
+    country: 'South Africa',
+    values: [
+      { year: '2015', budget: 550 },
+      { year: '2016', budget: 920 },
+      { year: '2017', budget: 690 },
+      { year: '2018', budget: 980 },
+      { year: '2019', budget: 760 },
+      { year: '2020', budget: 650 },
+      { year: '2021', budget: 880 },
+      { year: '2022', budget: 400 },
+      { year: '2023', budget: 1050 },
+    ],
+  },
+  {
+    country: 'Egypt',
+    values: [
+      { year: '2015', budget: 300 },
+      { year: '2016', budget: 480 },
+      { year: '2017', budget: 540 },
+      { year: '2018', budget: 710 },
+      { year: '2019', budget: 650 },
+      { year: '2020', budget: 450 },
+      { year: '2021', budget: 750 },
+      { year: '2022', budget: 200 },
+      { year: '2023', budget: 950 },
+    ],
+  },
+  {
+    country: 'Ghana',
+    values: [
+      { year: '2015', budget: 150 },
+      { year: '2016', budget: 300 },
+      { year: '2017', budget: 400 },
+      { year: '2018', budget: 650 },
+      { year: '2019', budget: 500 },
+      { year: '2020', budget: 350 },
+      { year: '2021', budget: 600 },
+      { year: '2022', budget: 150 },
+      { year: '2023', budget: 800 },
+    ],
+  },
+  {
+    country: 'Morocco',
+    values: [
+      { year: '2015', budget: 200 },
+      { year: '2016', budget: 450 },
+      { year: '2017', budget: 520 },
+      { year: '2018', budget: 700 },
+      { year: '2019', budget: 650 },
+      { year: '2020', budget: 480 },
+      { year: '2021', budget: 730 },
+      { year: '2022', budget: 300 },
+      { year: '2023', budget: 950 },
+    ],
+  },
+  {
+    country: 'Uganda',
+    values: [
+      { year: '2015', budget: 250 },
+      { year: '2016', budget: 320 },
+      { year: '2017', budget: 410 },
+      { year: '2018', budget: 570 },
+      { year: '2019', budget: 480 },
+      { year: '2020', budget: 370 },
+      { year: '2021', budget: 610 },
+      { year: '2022', budget: 220 },
+      { year: '2023', budget: 880 },
+    ],
+  },
+];

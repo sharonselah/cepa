@@ -8,16 +8,17 @@ import gridInfrastructureImg from 'public/grid.png';
 import energyProjectsImg from 'public/projects.png';
 import energyDemandImg from 'public/demand.png';
 import energyFundingImg from 'public/funding.png';
+import { cn } from '@/lib/utils';
 
 const metricData = [
-  { heading: 'Energy Production and Supply', image: energyProductionImg, path: '' },
-  { heading: 'Grid Infrastructure', image: gridInfrastructureImg, path: 'grid' },
-  { heading: 'Energy Projects', image: energyProjectsImg, path: 'projects' },
+  { heading: 'Energy Production', image: energyProductionImg, path: '' },
   { heading: 'Energy Demand', image: energyDemandImg, path: 'demand' },
+  { heading: 'Grid Infrastructure', image: gridInfrastructureImg, path: 'grid' },
   { heading: 'Energy Funding', image: energyFundingImg, path: 'funding' },
+  { heading: 'Energy Projects', image: energyProjectsImg, path: 'projects' },
 ];
 
-const Metrics = () => {
+const Metrics = ({ className = '' }) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -36,32 +37,39 @@ const Metrics = () => {
   };
 
   return (
-    <>
-      <div className=" flex md:flex-col gap-4 p-4 md:p-8 md:py-4 bg-[#F1f1ef]">
-        {metricData.map((metric, index) => (
-          <div
-            key={index}
-            className={`flex flex-col items-center gap-4 cursor-pointer transition-all`}
-            onClick={() => handleMetricClick(index, metric.path)}
-          >
-            <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${activeMetric === index ? 'border-maroon-100 bg-maroon-100' : 'border-gray-400'
-                }`}
-            >
-              <Image
-                src={metric.image}
-                alt={metric.heading}
-                className={`rounded-full object-cover w-[20px] h-[20px] transition-all ${activeMetric === index ? 'filter invert brightness-200' : ''
-                  }`}
-                width={20}
-                height={20}
-              />
-            </div>
-            <h4 className={`text-center text-sm font-semibold ${activeMetric == index ? 'text-maroon-100' : 'text-gray-800'}`}>{metric.heading}</h4>
-          </div>
-        ))}
-      </div>
-    </>
+    <div className={cn("flex md:flex-col gap-4 p-4 md:p-8 md:py-4 bg-gray-100 z-20", className)}>
+      {metricData.map((metric, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center gap-4 cursor-pointer transition-all"
+          onClick={() => handleMetricClick(index, metric.path)}
+        >
+         <div
+  className={cn(
+    "w-10 h-10 rounded-full flex items-center justify-center border-2",
+    activeMetric === index
+      ? "bg-maroon-100 border-maroon-100"
+      : "bg-gray-500 border-gray-500"
+  )}
+>
+  <Image
+    src={metric.image}
+    alt={metric.heading}
+    className={cn(
+      "rounded-full object-cover w-[20px] h-[20px] transition-all",
+      "invert brightness-200"
+    )}
+    width={20}
+    height={20}
+  />
+</div>
+
+          <h4 className={cn("text-center text-sm font-semibold", activeMetric === index ? "text-maroon-100" : "text-gray-800")}>
+            {metric.heading}
+          </h4>
+        </div>
+      ))}
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@
 export const thematicAreas = [
     {
         title: "Energy",
-        description: "The energy category tracks developments in renewable energy (solar, wind, hydro), grid infrastructure, off-grid solutions, and energy financing models.",
+        description: "The energy category tracks developments in renewable energy (solar, wind, hydro), grid infrastructure, and off-grid solutions.",
         icon: "/Energy.png",
         link: "/data/energy",
     },

@@ -4,19 +4,21 @@ import Metrics from "@components/metrics"
 import Header from "@components/header";
 import { cn } from "@/lib/utils";
 import { projects } from "@/data/project";
-import ProjectCard from "@/components/project"
+import ProjectCard from "@/components/project";
+import Footer from '@components/footer';
 
 const EnergyProjects = () => {
     return (
-      <div className='w-screen relative'>
-        <div className='col-span-12 p-6 md:p-8 md:py-6 mx-8'>
-          <div className="relative flex justify-between items-center mb-6">
-            <h2 className="text-h3 font-bold">Energy</h2>
+      <>
+      <div className='col-span-12 max-w-screen relative md:px-8  min-h-screen'>
+        <div className='col-span-12 md:py-6 mb-6'>
+          <div className="relative flex justify-between items-center">
+            <h2 className="text-h3 font-bold text-maroon-100">Energy Projects</h2>
             <Header className={cn("top-0")} />
           </div>
         </div>
-        <Metrics />
-        <div className='col-span-12 p-6 md:p-8 md:py-6 mx-8'>
+        <Metrics className ={cn('mx-auto md:flex-row justify-between bg-white border-b-8 border-gray-500')}/>
+        <div className='col-span-12  md:py-6'>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
@@ -24,6 +26,8 @@ const EnergyProjects = () => {
           </div>
         </div>
       </div>
+      <Footer/>
+      </>
     );
   };
   
