@@ -6,9 +6,10 @@ import "@styles/global.css";
 const nunitoSans = Nunito_Sans({ weight: ["400", "500"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://yourdomain.com'), 
   title: {
-    default: "CEPA",
-    template:"%s - CEPA"
+    default: "AFCEN",
+    template:"%s - AFCEN"
   },
   description: "Data aggregation on climate and energy in Africa",
 };

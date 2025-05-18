@@ -13,9 +13,13 @@ import { cn } from '@/lib/utils';
 const metricData = [
   { heading: 'Energy Production', image: energyProductionImg, path: '' },
   { heading: 'Energy Demand', image: energyDemandImg, path: 'demand' },
-  { heading: 'Grid Infrastructure', image: gridInfrastructureImg, path: 'grid' },
+  { heading: 'Distribution & Transmission', image: gridInfrastructureImg, path: 'grid' },
   { heading: 'Energy Funding', image: energyFundingImg, path: 'funding' },
   { heading: 'Energy Projects', image: energyProjectsImg, path: 'projects' },
+  
+  { heading: 'Energy Efficiency', image: energyProjectsImg, path: 'projects' },
+  { heading: 'Clean Cooking', image: energyProjectsImg, path: 'projects' },
+  { heading: 'Energy Policy', image: energyProjectsImg, path: 'projects' },
 ];
 
 const Metrics = ({ className = '' }) => {
@@ -44,25 +48,25 @@ const Metrics = ({ className = '' }) => {
           className="flex flex-col items-center gap-4 cursor-pointer transition-all"
           onClick={() => handleMetricClick(index, metric.path)}
         >
-         <div
-  className={cn(
-    "w-10 h-10 rounded-full flex items-center justify-center border-2",
-    activeMetric === index
-      ? "bg-maroon-100 border-maroon-100"
-      : "bg-gray-500 border-gray-500"
-  )}
->
-  <Image
-    src={metric.image}
-    alt={metric.heading}
-    className={cn(
-      "rounded-full object-cover w-[20px] h-[20px] transition-all",
-      "invert brightness-200"
-    )}
-    width={20}
-    height={20}
-  />
-</div>
+          <div
+            className={cn(
+              "w-10 h-10 rounded-full flex items-center justify-center border-2",
+              activeMetric === index
+                ? "bg-maroon-100 border-maroon-100"
+                : "bg-gray-500 border-gray-500"
+            )}
+          >
+            <Image
+              src={metric.image}
+              alt={metric.heading}
+              className={cn(
+                "rounded-full object-cover w-[20px] h-[20px] transition-all",
+                "invert brightness-200"
+              )}
+              width={20}
+              height={20}
+            />
+          </div>
 
           <h4 className={cn("text-center text-sm font-semibold", activeMetric === index ? "text-maroon-100" : "text-gray-800")}>
             {metric.heading}

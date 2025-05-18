@@ -19,7 +19,7 @@ const MoodysRatingsChart = ({ country }: Props) => {
   return (
     <div className="bg-white p-4 shadow-md rounded-md md:w-1/3">
       <h2 className="text-lg font-semibold mb-4">
-        Moody's Rating <span className="text-gray-500 text-base">(for {latest.year})</span>
+        Moodys Rating <span className="text-gray-500 text-base">(for {latest.year})</span>
       </h2>
 
       <div className="grid grid-cols-1 gap-4">

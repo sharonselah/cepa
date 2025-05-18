@@ -12,7 +12,7 @@ import {
 } from 'recharts';
 import { useState } from 'react';
 import { useEnergyBudgetData } from '@/data/debtGDP/use-get-total-energy-budget';
-import { totalEnergyBudget } from '@/data/debtGDP/fetch-total-energy-budget';
+
 import { Skeleton } from '@components/skeleton';
 
 type Props = {
@@ -20,14 +20,10 @@ type Props = {
   };
   
 const EnergyBudgetChart = ({ country }: Props) => {
-  const countryOptions = totalEnergyBudget.map((entry) => entry.country);
-  const [selectedCountry, setSelectedCountry] = useState<string>(country);
+
+  const [selectedCountry] = useState<string>(country);
 
   const { data, loading } = useEnergyBudgetData(selectedCountry);
-
-  const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCountry(e.target.value);
-  };
 
   return (
     <div className="bg-white p-4 shadow-md rounded-md w-full md:w-2/3">

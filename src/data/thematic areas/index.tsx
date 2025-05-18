@@ -7,35 +7,36 @@ export const thematicAreas = [
         link: "/data/energy",
     },
     {
-        title: "Carbon Market",
+        title: "Climate Finance & Carbon Markets ",
         description: "Carbon Market sector covers Africa’s evolving carbon credit landscape, including carbon offset projects, policy frameworks, and trading mechanisms.",
         icon: "/Carbon Markets.png",
         link: "/data/carbon-markets",
     },
     {
-        title: "Critical Minerals",
+        title: "Nature",
+        description: "The Nature thematic area will focus on conservation, restoration, and nature-based solutions that enhance climate resilience and biodiversity.",
+        icon: "/Bio.png",
+        link: "/data/nature",
+    },
+    {
+        title: "Green Mining and Manufacturing",
         description: "It covers the responsible extraction and processing of essential minerals for the green energy transition, including lithium, cobalt, & zinc.",
         icon: "/Minerals.png",
         link: "/data/critical-minerals",
     },
 
     {
-        title: "Agriculture",
+        title: "Sustainable Agriculture, Land Use, Water, & Oceans ",
         description: "Agriculture covers climate-smart agriculture practices, sustainable food production, soil conservation, and innovative financing for agribusinesses.",
         icon: "/Agric.png",
         link: "/data/agriculture",
     },
+   
     {
-        title: "Natural Capital & Biodiversity",
-        description: "Biodiversity focuses on conservation efforts, reforestation, and habitat protection to preserve Africa’s rich biodiversity.",
-        icon: "/Bio.png",
-        link: "/data/biodiversity",
-    },
-    {
-        title: "Water & Waste Management",
-        description: "The water and waste management sector addresses sustainable water resource management, sanitation, and waste reduction efforts.",
+        title: "Adaptation and Resilience ",
+        description: "It will touch on climate and health, early warning systems, sustainable water management, drought resilience, and loss and damage.",
         icon: "/Water.png",
-        link: "/data/waste-management",
+        link: "/data/adaptation-resilience",
     },
     {
         title: "Sustainable Infrastructure & Urbanization",

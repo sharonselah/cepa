@@ -54,8 +54,9 @@ export default function AfricaElectricityProduction() {
   const renderMap = (geoData) => {
     if (!containerRef.current || !svgRef.current) return;
     
-    const containerWidth = containerRef.current.clientWidth - 400;
-    const height = containerWidth * 0.63;
+    const containerWidth = containerRef.current.clientWidth;
+    const height = containerWidth * 0.7;
+    
     
     const svg = d3.select(svgRef.current)
       .attr("width", containerWidth)
@@ -70,10 +71,26 @@ export default function AfricaElectricityProduction() {
     
     // Create projection and path generator
     const projection = d3.geoAzimuthalEqualArea()
-      .scale(containerWidth / 2.5)
-      .translate([containerWidth / 2.7, height / 2]);
+      .scale(containerWidth / 2.6)
+      .translate([containerWidth / 2.7, height / 2 - 50]);
     
     const path = d3.geoPath().projection(projection);
+
+    /*
+
+     // Calculate dimensions - 60% of container width minus margins
+            const containerWidth = containerRef.current.clientWidth *0.85  - 40; 
+            const height = containerWidth * 0.7; 
+          
+            const svg = d3.select(svgRef.current)
+              .attr("width", containerWidth)
+              .attr("height", height);
+          
+            svg.selectAll('*').remove();
+          
+            // Create projection - using fitSize to automatically scale to available space
+            const projection = d3.geoAzimuthalEqualArea()
+              .fitSize([containerWidth, height], geoData);*/
     
     // Draw map
     const countries = svg.selectAll('path')
@@ -98,8 +115,8 @@ export default function AfricaElectricityProduction() {
           const tooltip = d3.select(tooltipRef.current);
           tooltip
             .style('opacity', 1)
-            .style('left', `${event.pageX + 10}px`)
-            .style('top', `${event.pageY + 10}px`)
+            .style('left', `${event.pageX -190}px`)
+            .style('top', `${event.pageY -120}px`)
             .html(`
               <strong>${countryData.country}</strong><br>
               Total Production: ${countryData.totalProductionGWh.toLocaleString()} GWh
@@ -247,6 +264,7 @@ export default function AfricaElectricityProduction() {
 
   return (
     <div className="container mx-auto">
+      <h1 className="text-center text-h4 mb-4">Annual Electricity Generation</h1>
       
       {loading ? (
         <div className="flex justify-center items-center h-64">
@@ -293,7 +311,7 @@ export default function AfricaElectricityProduction() {
             </form>
 
             {selectedCountry ? (
-              <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="">
                 <h3 className="text-2xl font-bold mb-2">{selectedCountry.country}</h3>
                 <p className="text-lg mb-4">
                   <span className="font-medium">Total Electricity Production:</span> {selectedCountry.totalProductionGWh.toLocaleString()} GWh
@@ -324,8 +342,8 @@ export default function AfricaElectricityProduction() {
                 </div>
               </div>
             ) : searchTerm ? (
-              <div className="bg-red-100 p-4 rounded">
-                No country found with the name "{searchTerm}"
+              <div className="">
+               
               </div>
             ) : null}
           </div>
