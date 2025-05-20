@@ -28,7 +28,7 @@ const Header = ({ className }: { className?: string }) => {
       {/* Left: Logo */}
       <div className="flex items-center gap-2">
         <Image
-          src="/AfCEN.png"
+          src="/Afcen.png"
           alt="AfCEN Logo"
           width={40}
           height={40}
