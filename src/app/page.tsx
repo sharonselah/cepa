@@ -13,7 +13,7 @@ const HomePage = () => {
      <div className="relative min-h-[400px] md:max-h-[80vh] overflow-hidden">
   {/* Background Image */}
   <Image
-    src="/teaser.png"
+    src="/Teaser.png"
     alt="Background"
     fill
     priority
