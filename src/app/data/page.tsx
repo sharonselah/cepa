@@ -10,15 +10,7 @@ import {
 
 const ThematicAreas = () => {
 
-    const icons = [
-  { icon: Users, title: "Users" },
-  { icon: Leaf, title: "Sustainability" },
-  { icon: Settings, title: "Settings" },
-  { icon: Waves, title: "Water" },
-  { icon: Building, title: "Infrastructure" },
-  { icon: RefreshCcw, title: "Cycle" },
-  { icon: Award, title: "Recognition" },
-];
+  
     return (
         <>
         <div className="col-span-12 p-8 mx-8">
