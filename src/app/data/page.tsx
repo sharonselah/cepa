@@ -3,9 +3,22 @@ import Header from "@components/header";
 import { cn } from "@/lib/utils";
 import { thematicAreas } from "@/data/thematic areas";
 import Footer from "@components/footer";
+import {
+  Users,Leaf, Settings, Waves, Building, RefreshCcw, Award,
+} from "lucide-react";
 
 
 const ThematicAreas = () => {
+
+    const icons = [
+  { icon: Users, title: "Users" },
+  { icon: Leaf, title: "Sustainability" },
+  { icon: Settings, title: "Settings" },
+  { icon: Waves, title: "Water" },
+  { icon: Building, title: "Infrastructure" },
+  { icon: RefreshCcw, title: "Cycle" },
+  { icon: Award, title: "Recognition" },
+];
     return (
         <>
         <div className="col-span-12 p-8 mx-8">
@@ -26,7 +39,7 @@ const ThematicAreas = () => {
             <div className="flex flex-wrap justify-center mb-6">
                 {thematicAreas.slice(0, 4).map((area, index) => (
                     <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
-                        <div className="bg-[#eff6ff] border border-gray-200 hover:border-inherit text-black hover:text-white hover:bg-maroon-100 duration-300 shadow-xs rounded-lg p-6 flex flex-col justify-between text-left">
+                        <div className="bg-green-100 shadow-sm hover:border-inherit text-black hover:bg-green-300 duration-300 shadow-xs rounded-lg p-6 flex flex-col justify-between text-left">
                             <Image src={area.icon} alt={area.title} width={65} height={65} className="mb-4" />
                             <h3 className="text-h4 font-semibold md:min-h-16">{area.title}</h3>
                             <p className="text-sm leading-7 mt-2 md:min-h-36 lg:min-h-28">{area.description}</p>
@@ -42,7 +55,7 @@ const ThematicAreas = () => {
             <div className="flex flex-wrap justify-center">
                 {thematicAreas.slice(4, 7).map((area, index) => (
                     <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
-                        <div className="bg-[#eff6ff] border border-gray-200 hover:border-inherit text-black hover:text-white hover:bg-maroon-100 duration-300 shadow-xs rounded-lg p-6 flex flex-col text-leftounded-lg shadow-md p-4 h-full">
+                        <div className="bg-green-100 border border-gray-200 hover:border-inherit text-black  hover:bg-green-300 duration-300 shadow-xs rounded-lg p-6 flex flex-col text-leftounded-lg shadow-md p-4 h-full">
                             <Image src={area.icon} alt={area.title} width={65} height={65} className="mb-4" />
                             <h3 className="text-h4 font-semibold md:min-h-24">{area.title}</h3>
                             <p className="text-sm leading-7 mt-2 md:min-h-36">{area.description}</p>

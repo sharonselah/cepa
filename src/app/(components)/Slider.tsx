@@ -16,7 +16,7 @@ const Slider = () => {
         modules={[Autoplay, Pagination]} // ✅ Pass modules here
         spaceBetween={30}
         slidesPerView={1}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        autoplay={{ delay: 10000, disableOnInteraction: false }}
         loop={true}
         pagination={{
           clickable: true,
@@ -36,7 +36,7 @@ const Slider = () => {
               <h3 className="text-h2">{slide.heading}</h3>
               <p className="text-body leading-9 my-4 md:mt-6 text-justify">{slide.body}</p>
               <Link href="/contributor">
-                <button className="bg-[#8e8e93] shadow-inherit text-white font-bold py-2 px-6 rounded mb-12">
+                <button className="bg-white shadow-inherit text-black font-bold py-2 px-6 rounded mb-12">
                   Be a Contributor
                 </button>
               </Link>

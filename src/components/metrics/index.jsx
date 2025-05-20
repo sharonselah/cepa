@@ -52,7 +52,7 @@ const Metrics = ({ className = '' }) => {
             className={cn(
               "w-10 h-10 rounded-full flex items-center justify-center border-2",
               activeMetric === index
-                ? "bg-maroon-100 border-maroon-100"
+                ? "bg-green-900 border-green-900"
                 : "bg-gray-500 border-gray-500"
             )}
           >
@@ -68,7 +68,7 @@ const Metrics = ({ className = '' }) => {
             />
           </div>
 
-          <h4 className={cn("text-center text-sm font-semibold", activeMetric === index ? "text-maroon-100" : "text-gray-800")}>
+          <h4 className={cn("text-center text-sm font-semibold", activeMetric === index ? "text-[#006633]" : "text-gray-800")}>
             {metric.heading}
           </h4>
         </div>
