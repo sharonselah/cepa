@@ -3,9 +3,6 @@ import Header from "@components/header";
 import { cn } from "@/lib/utils";
 import { thematicAreas } from "@/data/thematic areas";
 import Footer from "@components/footer";
-import {
-  Users,Leaf, Settings, Waves, Building, RefreshCcw, Award,
-} from "lucide-react";
 
 
 const ThematicAreas = () => {
