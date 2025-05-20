@@ -26,7 +26,7 @@ const cardData = [
 
 const Cards = () => {
   return (
-    <div className="col-span-12 grid grid-cols-1 md:grid-cols-3 justify-center gap-4 p-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-4 p-8">
       {cardData.map((card, index) => (
         <div key={index} className={`${card.bgColor} text-gray-800 p-6 rounded-lg shadow-md flex flex-col justify-between gap-4`}>
           <h4 className="text-h3">{card.heading}</h4>

@@ -1,8 +1,5 @@
 import Image from "next/image";
-import Header from "@components/header";
-import { cn } from "@/lib/utils";
 import { thematicAreas } from "@/data/thematic areas";
-import Footer from "@components/footer";
 
 
 const ThematicAreas = () => {
@@ -10,12 +7,8 @@ const ThematicAreas = () => {
   
     return (
         <>
-        <div className="col-span-12 p-8 mx-8">
-            {/* Header Row */}
-            <div className="relative flex justify-between items-center mb-8 md:mb-12">
-                <h2 className="text-2xl font-bold">Thematic Areas</h2>
-                <Header className={cn("top-0")} />
-            </div>
+        <div className="p-8 mx-8">
+           
 
             {/* Introduction */}
             <div className="bg-[#ffddab] bg-opacity-40 rounded-full px-6 py-3 mb-6">
@@ -58,7 +51,7 @@ const ThematicAreas = () => {
  
         </div>
         
-        <Footer/>
+     
         </>
     );
 };

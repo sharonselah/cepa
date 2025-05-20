@@ -1,9 +1,8 @@
 'use client';
 
 import Slider from "./(components)/Slider";
-import Header from "@components/header";
 import Cards from "./(components)/Cards";
-import Footer from "@components/footer";
+
 
 
 
@@ -12,18 +11,22 @@ const HomePage = () => {
   return (
     <>
       {/* Top Section */}
-      <div className="col-span-12 relative bg-cover bg-center min-h-[400px] md:max-h-[80vh]" style={{ backgroundImage: "url('/teaser.png')" }}>
+      <div
+        className="relative bg-cover bg-center min-h-[400px] md:max-h-[80vh]"
+        style={{ backgroundImage: "url('/teaser.png')" }}
+      >
+        {/* Softer Green Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#003d1a]/90 via-[#66bb88]/40 to-transparent z-0" />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#003d1a] to-[#1A0000]/50" />
-
-        <div className='mx-8 h-full relative'>
-          <Header />
+        {/* Content */}
+        <div className="relative z-10 p-8">
           <Slider />
         </div>
-        <Cards />
-
-        <Footer />
       </div>
+
+
+
+      <Cards />
 
 
     </>

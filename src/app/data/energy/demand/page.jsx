@@ -2,8 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react';
 import * as d3 from 'd3';
-import Head from 'next/head';
-import Footer from '@components/footer';
+
 // Regions of Africa
 const regions = {
   "Northern Africa": ["Algeria", "Egypt", "Libya", "Morocco", "Tunisia", "Sudan", "W. Sahara"],
@@ -348,13 +347,8 @@ export default function Home() {
   };
 
   return (
-    <div className="col-span-12 min-h-screen bg-gray-50">
-      <Head>
-        <title>African Energy Efficiency Dashboard</title>
-        <meta name="description" content="Interactive visualization of energy efficiency metrics across Africa" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
+    <div className="min-h-screen bg-gray-50">
+     
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6 text-center text-[#006633]">Energy Demand Dashboard</h1>
         
@@ -519,7 +513,7 @@ export default function Home() {
         </div>
       </main>
       
-     <Footer/>
+   
     </div>
   );
 }

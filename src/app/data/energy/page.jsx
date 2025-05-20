@@ -93,7 +93,7 @@ const Energy = () => {
 
   return (
     <>
-      <div className="col-span-12 max-w-screen relative p-4 md:px-8 md:py-4 min-h-screen">
+      <div className=" max-w-screen relative p-4 md:px-8 md:py-4 min-h-screen">
         <div className="relative flex justify-between items-center">
           <h2 className="text-h4 font-bold text-[#006633]">Energy Production</h2>
           <Header className={cn('top-0')} />

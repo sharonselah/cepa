@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Metrics from '@components/metrics';
-import Header from '@components/header';
 import { cn } from '@/lib/utils';
 import AfricaMapTNC from './(components)/TNC.jsx';
 import AfricaMapDNC from './(components)/DNC.jsx';
@@ -10,7 +9,7 @@ import AfricaMapLSD from './(components)/LSD.jsx';
 import AfricaMapMOD from './(components)/MOD.jsx';
 import AfricaMapSMD from './(components)/SMD.jsx';
 import AfricaMapACE from './(components)/ACE.jsx';
-import Footer from '@components/footer';
+
 
 const metricOptions = [
     { key: 'Transmission Network Coverage', label: 'Transmission Network Coverage' },
@@ -47,11 +46,8 @@ const Grid = () => {
 
     return (
         <>
-            <div className='col-span-12 max-w-screen relative p-4 md:px-8 md:py-2  min-h-screen'>
-                <div className='relative flex justify-between items-center'>
-                    <h2 className="text-h4 font-bold text-maroon-100">Grid Infrastructure</h2>
-                    <Header className={cn('top-0')} />
-                </div>
+            <div className=' max-w-screen relative p-4 md:px-8 md:py-2  min-h-screen'>
+              
 
                 <div className="relative flex justify-center md:mt-12 ">
                     <div className='absolute left-0 top-4'>
@@ -78,7 +74,7 @@ const Grid = () => {
 
                 </div>
             </div>
-            <Footer />
+      
         </>
     );
 };

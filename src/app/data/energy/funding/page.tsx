@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import Metrics from '@components/metrics';
-import Header from '@components/header';
-import Footer from '@components/footer';
 import { cn } from '@/lib/utils';
 import DebtToGDPChart from './(components)/DebtToGDPChart';
 import EnergyBudgetChart from './(components)/energyBudgetChart';
@@ -19,13 +17,8 @@ const EnergyFunding = () => {
 
   return (
     <>
-      <div className="col-span-12 max-w-screen relative md:px-6 min-h-screen">
-        <div className="col-span-12 md:py-6 mb-6 ">
-          <div className="relative flex justify-between items-center">
-            <h2 className="text-h3 font-bold text-maroon-100">Energy Funding</h2>
-            <Header className={cn('top-0')} />
-          </div>
-        </div>
+      <div className="max-w-screen relative md:px-6 min-h-screen">
+       
 
         <Metrics className ={cn('md:flex-row justify-between bg-white border-b-8 border-gray-500')}/>
 
@@ -73,7 +66,7 @@ const EnergyFunding = () => {
 
       </div>
 
-      <Footer />
+  
     </>
   );
 };
