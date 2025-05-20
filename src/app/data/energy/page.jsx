@@ -5,7 +5,6 @@ import Metrics from '@components/metrics';
 //original 
 import AfricaElectricityProduction from './(components)/production'
 import InstalledCapacity from './(components)/general/Installed Capacity';
-import AnnualGeneration from './(components)/general/Annual Electricity Generation';
 import AverageCapacityFactor from  './(components)/general/Average Capacity Factor';
 import LCOE from './(components)/general/LCOE';
 import UnutilizedPotential from './(components)/general/Unutilized Potential'; 
@@ -25,9 +24,7 @@ import WellProductivity from './(components)/geothermal/Well Productivity';
 //hydro
 import ResourceCapacity from './(components)/hydro/Reservoir Capacity';
 import SeasonalGenerationVariability from './(components)/hydro/Seasonal Generation Variability';
-/*import CatchmentArea from './(components)/hydro/Seasonal Generation Variability';
-import WaterUseEfficiency from './(components)/hydro/Seasonal Generation Variability';
-import DamSafetyIndex from './(components)/hydro/Seasonal Generation Variability';*/
+
 
 import MetricDropdown from "./metrics/metricDropDown";
 
@@ -90,10 +87,10 @@ const Energy = () => {
 
   return (
     <>
-      <div className=" max-w-screen relative p-4 md:px-8 md:py-4 min-h-screen">
+      <div className=" max-w-screen relative p-4 md:py-4 min-h-screen">
        
 
-        <div className="relative grid grid-cols-12 gap-4 md:mt-12 min-h-screen">
+        <div className="relative grid grid-cols-12 gap-4 min-h-screen">
 
           <div className='col-span-2'>
             <Metrics />

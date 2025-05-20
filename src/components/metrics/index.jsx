@@ -41,39 +41,42 @@ const Metrics = ({ className = '' }) => {
   };
 
   return (
-    <div className={cn("flex md:flex-col gap-4 p-4 md:p-8 md:py-4 bg-gray-100 z-20", className)}>
-      {metricData.map((metric, index) => (
-        <div
-          key={index}
-          className="flex flex-col items-center gap-4 cursor-pointer transition-all"
-          onClick={() => handleMetricClick(index, metric.path)}
-        >
-          <div
-            className={cn(
-              "w-10 h-10 rounded-full flex items-center justify-center border-2",
-              activeMetric === index
-                ? "bg-green-900 border-green-900"
-                : "bg-gray-500 border-gray-500"
-            )}
-          >
-            <Image
-              src={metric.image}
-              alt={metric.heading}
-              className={cn(
-                "rounded-full object-cover w-[20px] h-[20px] transition-all",
-                "invert brightness-200"
-              )}
-              width={20}
-              height={20}
-            />
-          </div>
+   <div className={cn("flex md:flex-col gap-4 p-4 border border-gray-100/50 z-20", className)}>
+  {metricData.map((metric, index) => (
+    <div
+      key={index}
+      className="flex flex-row items-center gap-4 cursor-pointer transition-all"
+      onClick={() => handleMetricClick(index, metric.path)}
+    >
+      <div
+        className={cn(
+          "w-10 h-10 rounded-full flex items-center justify-center border-2 shrink-0",
+          activeMetric === index
+            ? "bg-green-900 border-green-900"
+            : "bg-gray-500 border-gray-500"
+        )}
+      >
+        <Image
+          src={metric.image}
+          alt={metric.heading}
+          className="rounded-full object-cover w-[20px] h-[20px] invert brightness-200"
+          width={20}
+          height={20}
+        />
+      </div>
 
-          <h4 className={cn("text-center text-sm font-semibold", activeMetric === index ? "text-[#006633]" : "text-gray-800")}>
-            {metric.heading}
-          </h4>
-        </div>
-      ))}
+      <h4
+        className={cn(
+          "text-sm font-semibold",
+          activeMetric === index ? "text-[#006633]" : "text-gray-800"
+        )}
+      >
+        {metric.heading}
+      </h4>
     </div>
+  ))}
+</div>
+
   );
 };
 

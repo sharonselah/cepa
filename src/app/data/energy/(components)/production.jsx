@@ -66,7 +66,7 @@ export default function AfricaElectricityProduction() {
     
     // Create a color scale based on electricity production
     const maxProduction = d3.max(data, d => d.totalProductionGWh) || 0;
-    const colorScale = d3.scaleSequential(d3.interpolateBlues)
+    const colorScale = d3.scaleSequential(d3.interpolateGreens)
       .domain([0, maxProduction]);
     
     // Create projection and path generator
@@ -264,7 +264,7 @@ export default function AfricaElectricityProduction() {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-center text-h4 mb-4">Annual Electricity Generation</h1>
+      <h1 className="text-center text-xl font-bold text-[#006633] mb-4">Annual Electricity Generation</h1>
       
       {loading ? (
         <div className="flex justify-center items-center h-64">

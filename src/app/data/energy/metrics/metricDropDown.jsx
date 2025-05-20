@@ -38,7 +38,7 @@ const MetricDropdown = ({ selectedMetric, setSelectedMetric }) => {
                   key={item.key}
                   className={`text-left py-2 px-6 text-sm font-medium w-full ${
                     selectedMetric === item.key 
-                      ? 'bg-green-600 text-white' 
+                      ? 'bg-[#006633] text-white' 
                       : 'bg-white hover:border-b'
                   }`}
                   onClick={() => handleSelect(item.key)}

@@ -18,29 +18,26 @@ export default function AfricaMapBase({
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCountry, setSelectedCountry] = useState(null);
 
-    useEffect(() => {
-        if (loading || !svgRef.current || !containerRef.current) return;
+       const findCountryByName = useCallback((name) => {
+  if (!name || !data) return null;
 
-        const fetchGeoData = async () => {
-            try {
-                const response = await fetch("https://raw.githubusercontent.com/janasayantan/datageojson/master/geoAfrica.json");
-                const geoData = await response.json();
-                renderMap(geoData);
+  // Try exact match first
+  let countryData = data.find(
+    item => item.country.toLowerCase() === name.toLowerCase()
+  );
 
-                const handleResize = () => {
-                    renderMap(geoData);
-                };
+  // If no exact match, try includes
+  if (!countryData) {
+    countryData = data.find(
+      item =>
+        item.country.toLowerCase().includes(name.toLowerCase()) ||
+        name.toLowerCase().includes(item.country.toLowerCase())
+    );
+  }
 
-                window.addEventListener('resize', handleResize);
-                return () => {
-                    window.removeEventListener('resize', handleResize);
-                };
-            } catch (error) {
-                console.error("Error fetching geo data:", error);
-            }
-        };
-        fetchGeoData();
-    }, [loading, data, renderMap]);
+  return countryData;
+}, [data]);
+
 
     const renderMap = useCallback( (geoData) => {
         if (!containerRef.current || !svgRef.current) return;
@@ -168,25 +165,8 @@ export default function AfricaMapBase({
           .select('.domain').remove(); // Remove axis line
       }, [colorScale, legendColorScale, legendDomain, legendTitle, renderTooltipContent,findCountryByName ]);
 
-   const findCountryByName = useCallback((name) => {
-  if (!name || !data) return null;
+     
 
-  // Try exact match first
-  let countryData = data.find(
-    item => item.country.toLowerCase() === name.toLowerCase()
-  );
-
-  // If no exact match, try includes
-  if (!countryData) {
-    countryData = data.find(
-      item =>
-        item.country.toLowerCase().includes(name.toLowerCase()) ||
-        name.toLowerCase().includes(item.country.toLowerCase())
-    );
-  }
-
-  return countryData;
-}, [data]);
 
 
     const handleSearch = (e) => {
@@ -194,7 +174,29 @@ export default function AfricaMapBase({
         const foundCountry = findCountryByName(searchTerm);
         setSelectedCountry(foundCountry || null);
     };
+ useEffect(() => {
+        if (loading || !svgRef.current || !containerRef.current) return;
 
+        const fetchGeoData = async () => {
+            try {
+                const response = await fetch("https://raw.githubusercontent.com/janasayantan/datageojson/master/geoAfrica.json");
+                const geoData = await response.json();
+                renderMap(geoData);
+
+                const handleResize = () => {
+                    renderMap(geoData);
+                };
+
+                window.addEventListener('resize', handleResize);
+                return () => {
+                    window.removeEventListener('resize', handleResize);
+                };
+            } catch (error) {
+                console.error("Error fetching geo data:", error);
+            }
+        };
+        fetchGeoData();
+    }, [loading, data, renderMap]);
     return (
         <div className="container mx-auto">
             {loading ? (

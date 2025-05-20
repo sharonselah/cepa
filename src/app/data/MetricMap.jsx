@@ -46,7 +46,7 @@ export default function MetricMap({ metricKey, label, unit, colorInterpolator })
 
   return (
     <>
-      <h1 className="text-center text-h4 mb-4">{label}</h1>
+      <h1 className="text-center text-[#006633] text-h4 mb-4">{label}</h1>
       <AfricaMapBase
         loading={loading}
         data={data}
