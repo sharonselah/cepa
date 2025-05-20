@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import Metrics from '@components/metrics';
-import Header from '@components/header';
-import { cn } from '@/lib/utils';
 //original 
 import AfricaElectricityProduction from './(components)/production'
 import InstalledCapacity from './(components)/general/Installed Capacity';
@@ -31,7 +29,6 @@ import SeasonalGenerationVariability from './(components)/hydro/Seasonal Generat
 import WaterUseEfficiency from './(components)/hydro/Seasonal Generation Variability';
 import DamSafetyIndex from './(components)/hydro/Seasonal Generation Variability';*/
 
-import Footer from '@components/footer';
 import MetricDropdown from "./metrics/metricDropDown";
 
 const Energy = () => {
@@ -94,10 +91,7 @@ const Energy = () => {
   return (
     <>
       <div className=" max-w-screen relative p-4 md:px-8 md:py-4 min-h-screen">
-        <div className="relative flex justify-between items-center">
-          <h2 className="text-h4 font-bold text-[#006633]">Energy Production</h2>
-          <Header className={cn('top-0')} />
-        </div>
+       
 
         <div className="relative grid grid-cols-12 gap-4 md:mt-12 min-h-screen">
 
@@ -115,7 +109,7 @@ const Energy = () => {
 
         </div>
       </div>
-      <Footer />
+  
     </>
   );
 };

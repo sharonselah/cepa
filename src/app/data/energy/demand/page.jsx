@@ -350,7 +350,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
      
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6 text-center text-[#006633]">Energy Demand Dashboard</h1>
+       {/*  <h1 className="text-3xl font-bold mb-6 text-center text-[#006633]">Energy Demand Dashboard</h1>*/}
         
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
           <div className="flex flex-wrap justify-between items-center mb-6">
