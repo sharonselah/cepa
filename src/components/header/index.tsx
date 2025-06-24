@@ -15,6 +15,7 @@ const Header = ({ className }: { className?: string }) => {
       name: "Grant & Funding",
       path: "https://d7x3yzflik5mk.cloudfront.net/auth/sign-in?returnTo=%2Fdashboard",
     },
+     { name: "Discussion Forum", path: "https://workgroup.africacen.org/" },
     { name: "Technical Assistance", path: "/technical" },
   ];
 
