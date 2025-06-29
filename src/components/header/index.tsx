@@ -14,9 +14,10 @@ const Header = ({ className }: { className?: string }) => {
     {
       name: "Grant & Funding",
       path: "https://d7x3yzflik5mk.cloudfront.net/auth/sign-in?returnTo=%2Fdashboard",
+      comingSoon: true,
     },
-     { name: "Discussion Forum", path: "https://workgroup.africacen.org/" },
-    { name: "Technical Assistance", path: "/technical" },
+    { name: "Discussion Forum", path: "https://workgroup.africacen.org/" },
+    { name: "Technical Assistance", path: "/technical", comingSoon: true },
   ];
 
   return (
@@ -29,11 +30,11 @@ const Header = ({ className }: { className?: string }) => {
       {/* Left: Logo */}
       <div className="flex items-center gap-2">
         <Image
-          src="/Afcen.png"
+          src="/logo/logo-full.svg"
           alt="AfCEN Logo"
-          width={40}
-          height={40}
-          className="object-contain"
+          width={100}
+          height={80}
+          className="object-fill"
         />
       </div>
 
@@ -46,16 +47,27 @@ const Header = ({ className }: { className?: string }) => {
               : pathname === link.path;
 
           return (
-            <Link
-              key={link.path}
-              href={link.path}
-              className={cn(
-                "text-base font-medium transition-colors",
-                isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"
-              )}
-            >
-              {link.name}
-            </Link>
+            <div key={link.path} className="relative">
+              <Link
+                href={link.comingSoon ? "#" : link.path}
+                onClick={link.comingSoon ? (e) => e.preventDefault() : undefined}
+                className={cn(
+                  "text-base font-medium transition-colors flex items-center gap-2",
+                  link.comingSoon
+                    ? "text-gray-400 cursor-not-allowed"
+                    : isActive
+                      ? "text-black font-semibold"
+                      : "text-gray-600 hover:text-black"
+                )}
+              >
+                {link.name}
+                {link.comingSoon && (
+                  <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full">
+                    Coming Soon
+                  </span>
+                )}
+              </Link>
+            </div>
           );
         })}
       </nav>

@@ -8,12 +8,12 @@ const cardData = [
     linkHref: "/data",
     bgColor: "bg-[#f3f2e9]",
   },
-  
+
   {
     heading: "Grant",
     body: "Submit your project for funding! Get vetted, gain stakeholder support, and secure grants to drive real-world climate impact.",
     linkText: "Apply for Grant",
-    linkHref: "https://d7x3yzflik5mk.cloudfront.net/auth/sign-in?returnTo=%2Fdashboard",
+    linkHref: "https://finance.africacen.org",
     bgColor: "bg-[#e6f1e8]",
   },
   {
@@ -23,11 +23,25 @@ const cardData = [
     linkHref: "/contributor",
     bgColor: "bg-[#f2e4d6]",
   },
+  {
+    heading: "Community-Driven Quality",
+    body: "Mobilize and manage hyperlocal data collection! As a TPM, you recruit and support youth data collectors, ensure quality, and power Africa's climate data economy from the ground up.",
+    linkText: "Join as TPM",
+    linkHref: "/tpm",
+    bgColor: "bg-[#e8f4f8]",
+  },
+  {
+    heading: "Accelerate Your Climate Projects",
+    body: "List your project, unlock technical assistance, and access funding. Our platform supports every step—from feasibility modeling to investment connections.",
+    linkText: "Get Started as Developer",
+    linkHref: "https://finance.africacen.org",
+    bgColor: "bg-[#f5e8f3]",
+  },
 ];
 
 const Cards = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-4 p-8">
+    <div className="grid grid-cols-1 md:grid-cols-5 justify-center gap-4 p-8">
       {cardData.map((card, index) => (
         <div key={index} className={`${card.bgColor} text-gray-800 p-6 rounded-lg shadow-md flex flex-col justify-between gap-4`}>
           <h4 className="text-lg font-semibold">{card.heading}</h4>
