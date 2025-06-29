@@ -20,14 +20,14 @@ const cardData = [
     heading: "Contribution",
     body: "Help build Africa’s leading climate data hub! Add or refine data, provide local insights, and get paid for verified contributions.",
     linkText: "Be a Contributor",
-    linkHref: "/contributor",
+    linkHref: "/coming-soon",
     bgColor: "bg-[#f2e4d6]",
   },
   {
     heading: "Community-Driven Quality",
     body: "Mobilize and manage hyperlocal data collection! As a TPM, you recruit and support youth data collectors, ensure quality, and power Africa's climate data economy from the ground up.",
     linkText: "Join as TPM",
-    linkHref: "/tpm",
+    linkHref: "/coming-soon",
     bgColor: "bg-[#e8f4f8]",
   },
   {
